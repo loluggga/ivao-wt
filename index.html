@@ -13,7 +13,20 @@
   padding: 18px;
   width: 100%;
   border: none;
-  text-align: left;
+  text-align: center;
+  font-size: 15px;
+  font-family: 'Roboto', sans-serif;
+  margin-top: 2px;
+}
+
+.collapsible2 {
+  background-color: #23BD0E;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: center;
   font-size: 15px;
   font-family: 'Roboto', sans-serif;
   margin-bottom: 2px;
@@ -30,40 +43,101 @@
   transition: max-height 0.2s ease-out;
   background-color: #f1f1f1;
   font-family: 'Roboto', sans-serif;
+}
 
-h2.header {
+.ueberschrift {
   text-align: center;
+  font-family: 'Roboto', sans-serif;
+  font-size: 40px;
+}
+
+.untertitel {
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  font-size: 25px;
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+
+.untertitel2 {
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  font-size: 10px;
+  margin-bottom: 2%
 }
 
 </style>
 </head>
 <body>
 
-<h2 class="header">WT 2021</h2>
+<h2 class="ueberschrift">MSFS EUROPA WT 2021 (VFR)</h2>
+<h2 class="untertitel2">by Luca</h2>
 
-<p>Legs</p>
-<button class="collapsible">Leg 1</button>
+<button class="collapsible">Übersicht</button>
 <div class="content">
-  <p>PSA - SPESA</p>
-  <p><iframe src="https://www.google.com/maps/d/embed?mid=1lnSdsNKs4iYilENiWkFKNa3FaKuQMgU5" width="640" height="480"></iframe></p>
+  <p></p>
+  <p>50 Legs<br>Gesamtdauer: <br></p>
+  <p><iframe src="https://www.google.com/maps/d/embed?mid=1lnSdsNKs4iYilENiWkFKNa3FaKuQMgU5" width="100%" height="1000"></iframe></p>
+</div>
+<p><h3 class="untertitel">Leg-Liste:</h3></p>
+
+
+<button class="collapsible">Leg 1 | EDDH-EDDW | 40min</button>
+<div class="content">
+  <p>EDDH (Hamburg) - EDDW (Bremen)</p>
+  <p>Flugzeit ca. 2h<br>Distanz: 65nm / 100km<br>Point of Interests: Hamburg City, Hamburger Hafen, Harburger Berge, BAB1, Huvenhoopsmoor, Bremen City, Weser-Stadion </p>
+  <p><iframe src="https://www.google.com/maps/d/embed?mid=1lnSdsNKs4iYilENiWkFKNa3FaKuQMgU5" width="100%" height="600"></iframe></p>
 </div>
 
-<button class="collapsible">Leg 2</button>
+<button class="collapsible">Leg 2 | EDDW-EDLT | 1h 15min</button>
 <div class="content">
-  <p>Leg56235</p>
+  <p>Bremen - Münste-Telgte</p>
+  <p>Flugzeit ca. 1h 30min<br>Distanz: 110nm / 200km<br>Point of Interests: Weser, Steinhuder Meer, Porta Westfalica, Bielefeld, Münster City</p>
+  <p><iframe src="https://www.google.com/maps/d/embed?mid=1lnSdsNKs4iYilENiWkFKNa3FaKuQMgU5" width="100%" height="600"></iframe></p>
 </div>
 
-<button class="collapsible">Leg 3</button>
+<button class="collapsible">Leg 3 | EDLT-EDLN | 1h</button>
 <div class="content">
-  <p>Leg3</p>
+  <p>Münster - Mönchengladbach</p>
+  <p>Flugzeit ca. 1h<br>Distanz: 80nm / 150km<br>Point of Interests: Münster City, Haltern am See, Oberhausen, Tetraeder, Essen City, Baldeneysee, Oberhausen, Duisburg, Rhein </p>
+  <p><iframe src="https://www.google.com/maps/d/embed?mid=1lnSdsNKs4iYilENiWkFKNa3FaKuQMgU5" width="100%" height="600"></iframe></p>
 </div>
+
+<button class="collapsible">Leg 4 | EDLN-EBGB | 1h 10min</button>
+<div class="content">
+  <p>Mönchengladbach - Brüssel</p>
+  <p>Flugzeit ca. 1h 10min<br>Distanz: 100nm / 180km<br>Point of Interests: Garzweiler, Etzweiler, Aachen, Maastricht, Hoge Kempen, E314 (Autobahn), Brüssel City</p>
+  <p><iframe src="https://www.google.com/maps/d/embed?mid=1lnSdsNKs4iYilENiWkFKNa3FaKuQMgU5" width="100%" height="600"></iframe></p>
+</div>
+
+<button class="collapsible">Leg 5 | EBGB-LFAC | 1h 15min</button>
+<div class="content">
+  <p>XXX - XXX</p>
+  <p>Flugzeit ca. XXX<br>Distanz: XXXnm / XXXkm<br>Point of Interests:</p>
+  <p><iframe src="XXX" width="100%" height="600"></iframe></p>
+</div>
+
 
 <script>
 var coll = document.getElementsByClassName("collapsible");
+var coll2 = document.getElementsByClassName("collapsible2");
 var i;
+var f;
 
 for (i = 0; i < coll.length; i++) {
   coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.maxHeight){
+      content.style.maxHeight = null;
+    } else {
+      content.style.maxHeight = content.scrollHeight + "px";
+    }
+  });
+}
+
+for (f = 0; f < coll2.length; f++) {
+  coll2[f].addEventListener("click", function() {
     this.classList.toggle("active");
     var content = this.nextElementSibling;
     if (content.style.maxHeight){
